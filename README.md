@@ -29,7 +29,7 @@
 	code .
 ```
 
-3. Maak een **.env** aan in de root van het project en kopieer **.env.example** naar **.env**
+3. Maak een **.env** aan in de root van het project en kopieer **.env.example** naar **.env**. Pas database username en password aan.
 
 4. Installeer de PHP dependencies
 ```bash

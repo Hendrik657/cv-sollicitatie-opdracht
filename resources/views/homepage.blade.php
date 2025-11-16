@@ -23,10 +23,76 @@
 		<header class="flex w-full items-center justify-center">
 			<img src="{{ asset('images/profielFoto.jpg') }}" alt="Foto van mijzelf" class="w-32 h-32 object-cover rounded-full">
 			<h1 class="ml-3 text-4xl font-bold">Welkom op de CV website van Hendrik Somers!</h1>
-			
 		</header>
+
 		<main>
-			
+			<div class="flex">
+				<div class="flex-col">
+					{{-- Over mij --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">Over mij</h2>
+						<p class="mt-1">{{ $profile->bio }}</p>
+					</section>
+
+					{{-- Skills --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">Vaardigheden</h2>
+						<ul class="ml-3 list-disc">
+							@foreach (explode(',', $profile->skills) as $skill)
+								<li>{{ trim($skill) }}</li>
+							@endforeach
+						</ul>
+					</section>
+
+					{{-- Opleiding --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">Opleiding</h2>
+						<p class="mt-1">{{ $profile->college }}</p>
+					</section>
+				</div>
+
+				<div class="flex-col ml-2">
+					{{-- Technische skills --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">Technische skills</h2>
+						<ul class="ml-3 list-disc">
+							@foreach (explode(',', $profile->technical_skills) as $skill)
+								<li>{{ trim($skill) }}</li>
+							@endforeach
+						</ul>
+					</section>
+
+					{{-- Werkervaring --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">Werkervaring</h2>
+						<ul class="ml-3 list-disc">
+							@foreach (explode(',', $profile->work_experience) as $experience)
+								<li>{{ $experience }}</li>
+							@endforeach
+						</ul>
+					</section>
+				</div>
+
+				<div class="flex-col ml-2">
+					{{-- Stages --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">Stages</h2>
+						<p class="mt-1">{{ $profile->internships }}</p>
+					</section>
+
+					{{-- Email --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">E-mailadres</h2>
+						<p class="mt-1">{{ $profile->email }}</p>
+					</section>
+
+					{{-- Linkedin --}}
+					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
+						<h2 class="text-3xl font-bold">LinkedIn</h2>
+						<a class="mt-1 underline text-blue-500" href="{{ $profile->linkedin }}">Bezoek mijn LinkedIn</a>
+					</section>
+				</div>
+			</div>
 		</main>
 	</body>
 </html>

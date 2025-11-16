@@ -20,14 +20,14 @@
         @endif
     </head>
     <body class="ml-2 mt-2 bg-[#c0c0c0]">
-		<header class="flex w-full items-center justify-center">
+		<header class="flex flex-col md:flex-row w-full items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
 			<img src="{{ asset('images/profielFoto.jpg') }}" alt="Foto van mijzelf" class="w-32 h-32 object-cover rounded-full">
-			<h1 class="ml-3 text-4xl font-bold">Welkom op de CV website van Hendrik Somers!</h1>
+			<h1 class="text-2xl md:text-4xl font-bold">Welkom op de CV website van Hendrik Somers!</h1>
 		</header>
 
 		<main>
-			<div class="flex">
-				<div class="flex-col">
+			<div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+				<div class="flex flex-col flex-1 space-y-4">
 					{{-- Over mij --}}
 					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
 						<h2 class="text-3xl font-bold">Over mij</h2>
@@ -51,7 +51,7 @@
 					</section>
 				</div>
 
-				<div class="flex-col ml-2">
+				<div class="flex flex-col flex-1 space-y-4">
 					{{-- Technische skills --}}
 					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
 						<h2 class="text-3xl font-bold">Technische skills</h2>
@@ -73,7 +73,7 @@
 					</section>
 				</div>
 
-				<div class="flex-col ml-2">
+				<div class="flex flex-col flex-1 space-y-4">
 					{{-- Stages --}}
 					<section class="mt-3 bg-green-900 text-white p-1 pl-3 rounded-[20px] w-100">
 						<h2 class="text-3xl font-bold">Stages</h2>
